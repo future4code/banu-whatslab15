@@ -3,19 +3,21 @@ import styled from 'styled-components'
 
 
 const MainConteiner = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:100% ;
+  background-color:greenyellow;
 `
 const ContainerMensagem = styled.div`
 
-flex-grow: 1
 `
 
 const ContainerInputMensagem = styled.div`
 
-flex-grow:0
+display:flex;
+flex-direction: row;
 `
 
 class Mensagens extends React.Component{
@@ -24,22 +26,36 @@ class Mensagens extends React.Component{
       InputMensagem:""
   };
 
+  alterarApelido = (e) => {
+    this.setState({ inputApelido: e.target.value });
+  };
+
+  alterarMensagem = (e) =>{
+    this.setState({InputMensagem: e.target.value});
+  }
+
+
   onClickAdicionar = () => {
     this.setState({
       inputApelido: "",
       InputMensagem: ""
     } ); 
 }
+
     render() {
          return (
+            
             <MainConteiner>
             <h1>WhatsLab 15</h1>
-            <ContainerMensagem> 
-            
+            <ContainerMensagem>
+                <p>Mensagem</p>
+
             </ContainerMensagem>
             <ContainerInputMensagem>
-            <input value ={this.state.inputApelido}  />
-            <input value ={this.state.InputMensagem} />
+            <p>Apelido</p>
+            <input value ={this.state.inputApelido} onChange={this.alterarApelido} />
+            <p>Mensagem</p>
+            <input value ={this.state.InputMensagem} onChange={this.alterarMensagem} />
             <button onClick={this.onClickAdicionar}>Enviar</button>
             
             </ContainerInputMensagem>
@@ -48,3 +64,5 @@ class Mensagens extends React.Component{
         );
     }
 }
+
+export default Mensagens;

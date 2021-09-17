@@ -1,26 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-import Mensagem from './Components/Mensagem/mensagem'
-import './App.css';
-
-const MainConteiner = styled.div`
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-`
+import './App.css'
 
 
-export default function App() {
 
-  return (
-    <div className= "App">
 
-    <mensagem />
 
-    </div>
-  );
-  
+const App = () =>{
+  return <div className= "conteiner"></div>
     
+  
 }
-
-export default App;
+export default App

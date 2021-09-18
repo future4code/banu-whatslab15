@@ -11,7 +11,7 @@ const MainConteiner = styled.div`
   background-color:greenyellow;
 `
 const ContainerMensagem = styled.div`
-
+background-color: yellow;
 `
 
 const ContainerInputMensagem = styled.div`
